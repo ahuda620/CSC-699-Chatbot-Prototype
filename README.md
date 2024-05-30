@@ -71,23 +71,24 @@ Due to the SELF-REFINE code starting at line 343 in `server.js` file, this code 
 ## Setup (Using your Own Resume)
 1. Make sure steps 1-5 are done in the previous section
 2. Dowload a local copy of your resume in PDF format and put it in the `backend` folder
-3. Make a new collection in the database to store the vector embeds of your resume
+3. Name your resume file `ResumeDemo.pdf`. On line 138, thats where the program uses `PDFLoader` from Langchain to load your pdf and store it in the variable called `docs`
+4. Make a new collection in the database to store the vector embeds of your resume
     - Make a note of what you named the collection
-4. Make a search index for that collection by following the steps under the `Creating an Index` section on the [Langchain docs](https://js.langchain.com/v0.1/docs/integrations/vectorstores/mongodb_atlas/)
+5. Make a search index for that collection by following the steps under the `Creating an Index` section on the [Langchain docs](https://js.langchain.com/v0.1/docs/integrations/vectorstores/mongodb_atlas/)
     - When making the search index, be sure to change the `numDimensions` to 1536 instead of 1024 for OpenAI embeddings
     - Be sure to select your collection on the left side when making the search index aswell
     - Make a note of what you named the search index
-5. Go back to the `server.js` file since your going to have to edit some lines in there
-6. On line 122 in the `server.js` file, change `"resume-vectorstore"` to your collection name
-7. Uncomment lines 171-180
+6. Go back to the `server.js` file since your going to have to edit some lines in there
+7. On line 122 in the `server.js` file, change `"resume-vectorstore"` to your collection name
+8. Uncomment lines 171-180
     - Make sure to change the value for `indexName` to the name you used when making the search index
-8. Comment lines 183-335
-9. Save your changes and then start the program again by typing `npm start` in the terminal
+9. Comment lines 183-335
+10. Save your changes and then start the program again by typing `npm start` in the terminal
     - Type something in the terminal when the Chatbot prompts you
     - You will get an error message and the program will crash, ignore it
-10. Check the your collection in the database, it should now have the embeddings of your resume in it
-11. Recomment lines 171-180
+11. Check the your collection in the database, it should now have the embeddings of your resume in it
+12. Recomment lines 171-180
     - This is important because otherwise, you will be loading your resume info again into your collection, so your collection will have duplicated information which will interfere with data retrieval
-12. Uncomment lines 183-335
-13. Save your changes and run the program normally. The Chatbot should function as intended using your resume info
+13. Uncomment lines 183-335
+14. Save your changes and run the program normally. The Chatbot should function as intended using your resume info
 
