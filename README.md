@@ -12,6 +12,7 @@ It utilizes Langchain and ChatGPT-4o for its functionality. The LLM can be chang
  - Express *(Connecting backend to frontend)*
  - MongoDB Atlas *(Database)*
  - React *(Frontend)*
+ - Axios *(Connecting frontend to backend)*
  - Langchain *(Extends LLMs capabilities)*
  - Puppeteer *(for webscraping this [site](https://www.themuse.com/advice/interview-questions-and-answers))*
  - Langchain PDFLoader *(This was used to load the user's resume which was in PDF format into the program, however now that you can upload files to ChatGPT-4o, this is probably not needed anymore)*
